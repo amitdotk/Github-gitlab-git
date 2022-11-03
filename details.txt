@@ -1,0 +1,197 @@
+URL:- https://www.youtube.com/watch?v=Lr7sYCrhxE0   --> GIT Basics for DevOps Beginners
+          https://www.youtube.com/watch?v=AP0EH1ciULc  --> GitLab Tutorial - Setup Local Environment
+
+GIT:- version control system
+
+0. install git
+1. initialize a git repo
+2. configure files to track
+3. git tracks changes   --> you can configure all the files to track or specific files to track.
+4. stage changes
+5. commit changes
+ 
+git version
+git init
+git status
+git add file1 file2 file3 ... etc
+git status
+modify / add any file
+git status
+git add main.py  --> this time it stages the changes and marks them ready for commit
+git status
+git commit -m "Initial Commit" --->> use a commit message for reference after -m option.
+
+once commited git creates a new version of repository.
+
+local repo -> laptop
+
+remote repo - > this can be anywhre in the internet or local network.
+
+what is thie remote repo:- github or gitlab  --> they are popular
+
+difference between git and github:- git is the tool and github is the git server that hosts repositories in internet.
+
+you must create a repository. If you are using github, then create a new repository using github web ui.
+After creation make it public or private.
+Then take the url of the repository.
+Then add this url to the local system using the below command.
+
+git remote add <name> <url>   --> name is for reference. It can be anything.
+git remote add github https://github.com/mmumshad/my-application.git
+git push <name> <branch>
+git push github master
+
+Note:- the default branch is master.
+
+If you are pushing it for first time, and the master branch is not present on the remote side, then you must use -u option as below.
+git push -u github master
+
+Others can get it as --
+
+git clone https://github.com/mmumshad/my-application.git    --> for the one who doesn't have this repository in local. Like other users.
+once cloned, no need to configure the git repo. It will automatically get configured and can be checked with the below command.
+
+git remote -v
+
+origin is the default name to the remote repository when it is cloned.
+
+git pull --> this is the command to pull the changes and not the complete repository.
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+GitLab Tutorial - Setup Local Environment
+
+to install gitlab, go to the gitlab website https://about.gitlab.com/installation
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Another try with kodekloud youtube video:-
+
+GIT:-
+
+https://www.youtube.com/watch?v=Lr7sYCrhxE0
+
+SCM:- source control management
+
+VCS:- Version Control System - there are many VCS and GIT is one of the most popular one.
+
+staging area:- the place where the files which are ready to be committed are placed.
+
+when we commit, the changes will be created only with that file placed in the staging.
+
+
+steps:-
+
+install GIT
+initialize a GIT repository
+configure files to track
+GIT tracks changes
+stage changes
+commit changes
+
+
+install GIT:- yum install git / apt install git .... etc
+
+instructions are here https://git-scm.com/book/en/v2/getting-started-installing-git
+
+git version
+
+git init
+
+git status
+
+git add file1 file2 file3 ...   --> configure which files to be tracked by GIT
+
+git status
+
+change a file say main.py
+
+git status   --> this will say that the file is changed but not staged.
+
+git add main.py --> this command will stage this file.
+
+git commit -m "Initial Commit"      --> -m is for message like "Initial Commit"
+
+once committed, GIT creates a new version of the changes. If we do not specify the message using -m, git will open a editor and ask to type the message.
+
+
+
+local git repository :- laptop / computer
+
+
+remote git repository:- anywhere in the internet / network
+
+so all the users can work on local repository and push to the remote repository.
+
+if multiple users modifying the same file, git most likely handle this situation.
+
+but if multiple users modifying the same file and the same line, then merge conflict arises. 
+
+then you have to tell git which change is to be accepted.
+
+
+what is this and how do you set one up. remote git repository can be hosted on a git server. identify a system/server in your network and install git on it. the way you install in your laptop. GIT comes with a built in command called git daemon that runs git as a simple tcp server. that's all you really need to built a git server.
+
+
+alternate way is to publicly hosted services like github or gitlab. the are free.
+
+what is the difference between git and github
+
+commands:-
+
+git init
+git add .
+git commit -m "initial commit"
+
+reate a repository in github ( the plus/+ sign on the top right )
+then copy the url
+
+next step is to transfer the code from local repository to the remote repository there in github.
+
+our local repository must know that we have a remote repository. 
+
+for that we have to run the command as ..
+
+git remote add <name> <the url>
+
+note:- the name does not have to be the same name as our own remote repository. It is only for our reference.
+
+we can have the same local repository pushed to multiple remote repository. So, we must konw which repository is for which purpose.
+
+now push the code to the remore repository.
+
+git push <name> <branch-name>
+
+
+for now just consider the default branch is the "master".
+
+as the master branch is not there in the remote repository yet as it is just created. You must specify that with -u option as below.
+
+git push -u github master
+
+next onwards as the master is already there, then -u is not needed.
+
+now master is available in the remote repository. How other users can retrieve it?
+
+for that the code has to be pulled in the local laptop. The command as --
+
+for the first time, we must clone the repository.
+
+git clone https://xxxxx.yyyy.zzzz
+
+as the user is cloned the repository, he doesn't need to configure the remote. The remote is altumatically configured for him.
+
+running the below command will list the remote repositories.
+
+git remote -v
+
+note:- origin is the defalt name to the remote repository when it is cloned. It is short form of Original (origin) repository.
+
+another user, can get the new changes by pulling them. for this the user need to run the below command.
+
+git pull 
+
+
+
